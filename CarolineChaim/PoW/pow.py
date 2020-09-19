@@ -16,7 +16,7 @@ time = str(dt)
 
 
 #MENSAGEM
-mensagem = "Primeiro bloco mineirado da Carol"
+mensagem = "Teste2"
 
 
 #DIFICULDADE
@@ -28,6 +28,7 @@ print ("DIFICULDADE:  ",dificuldade)
 #VARIAVEIS
 processando = True
 nounce = 0
+ 
 
 
 #WHILE
@@ -51,19 +52,14 @@ while processando :
 
 #POST
 print("MENSAGEM A SER ENVIADA:  ",string)
-resposta = requests.post("http://entregapow.blockchainsper.com:8880/blocks/mine", data = string)
+
+
+post_block(string)
+
 print ("HASH DA STRING:   ", hash_util)
 
 
-#RESPOSTA
-if resposta.status_code == 400:
-    print ("============")
-    print("ERRO")
-    print ("============")
-else:
-    print ("============")
-    print("BLOCO MINERADO")
-    print ("============")
+
 
 
 
