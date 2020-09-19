@@ -14,11 +14,11 @@ def get_difficulty():
     return response["data"]["zeros"]
 
 
-#def post_block(block: Block):
-    #url = "http://entregapow.blockchainsper.com:8880/blocks/mine"
+def post_block(payloadd):
+    url = "http://entregapow.blockchainsper.com:8880/blocks/mine"
 
-    #payload = "{\n    \"block\": \"" + block.block_string + "\"\n}"
-    #headers = {
-    #'Content-Type': 'application/json'
-   # }
-    #return requests.request("POST", url, headers=headers, data = payload)
+    payload = payloadd
+    headers = {
+    'Content-Type': 'application/json'
+    }
+    return requests.request("POST", url, headers=headers, data = payload)
