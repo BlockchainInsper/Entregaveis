@@ -1,3 +1,4 @@
+#IMPORTS
 from calls import *
 import time
 import hashlib
@@ -8,27 +9,28 @@ import calendar
 
 
 
-
-
+#TIME
 dt = datetime.datetime.utcnow()
-
-
 dt = calendar.timegm(dt.utctimetuple())
-
 time = str(dt)
 
 
-
+#MENSAGEM
 mensagem = "Primeiro bloco mineirado da Carol"
 
+
+#DIFICULDADE
 dificuldade = get_difficulty()
 #dificuldade = 5
 print ("DIFICULDADE:  ",dificuldade)
 
-processando = True
 
+#VARIAVEIS
+processando = True
 nounce = 0
 
+
+#WHILE
 while processando :
     nounce_string = str(nounce)
     
@@ -47,15 +49,13 @@ while processando :
         nounce += 1
 
 
-headers = {
-'Content-Type': 'application/json'
-}
+#POST
 print("MENSAGEM A SER ENVIADA:  ",string)
 resposta = requests.post("http://entregapow.blockchainsper.com:8880/blocks/mine", data = {'block': string})
 print ("HASH DA STRING:   ", hash_util)
 
 
-
+#RESPOSTA
 if resposta.status_code == 400:
     print ("============")
     print("ERRO")
