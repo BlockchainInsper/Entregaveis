@@ -51,7 +51,7 @@ while processando :
 
 #POST
 print("MENSAGEM A SER ENVIADA:  ",string)
-resposta = requests.post("http://entregapow.blockchainsper.com:8880/blocks/mine", data = {'block': string})
+resposta = requests.post("http://entregapow.blockchainsper.com:8880/blocks/mine", data = string)
 print ("HASH DA STRING:   ", hash_util)
 
 
