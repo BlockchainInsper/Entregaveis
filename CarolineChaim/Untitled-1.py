@@ -15,8 +15,9 @@ time = time.time()
 time_string = str(time)
 mensagem = "Primeiro bloco mineirado da Carol"
 
-dificuldade = get_difficulty()
-#dificuldade = 2
+#dificuldade = get_difficulty()
+
+dificuldade = 2
 print (dificuldade)
 
 processando = True
@@ -25,26 +26,21 @@ nounce = 0
 
 while processando :
     nounce_string = str(nounce)
-    
     string = time_string + "|" + nounce_string + "|" + mensagem
-    
-    byte_string = bytes(string, "utf8")
-    s_hash = hashlib.sha256(byte_string).hexdigest()
+    s_hash = hashlib.sha256(b"string").hexdigest()
 
     if s_hash[:dificuldade] == "0"*dificuldade:
         print ("nounce ta safe")
-        
         hash_util = s_hash
         processando = False
     else:
-        
         
         nounce += 1
 
 
 print (hash_util)
 
-requests.request("POST", url, headers=headers, data = string)
+#requests.request("POST", url, headers=headers, data = string)
 
 
 
