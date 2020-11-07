@@ -42,7 +42,9 @@ def create_block(message, number_of_zeros):
         nounce += 1
         block = f"{clock}|{nounce}|{message}"
         h = SHA256.new(block.encode())
-    
+        if nounce % 10000 == 0:
+            print(f"Nounce: {nounce}")
+
     return h.hexdigest(), block
 
 def post_block(block):
@@ -67,7 +69,7 @@ if __name__ == "__main__":
     print(h) # Print hashed block
     print(block) # Print string block
 
-    post = False # Post boolean
+    post = True # Post boolean
 
     if post:
         post_block(block) # Post block to blockchain
