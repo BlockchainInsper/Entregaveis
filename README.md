@@ -14,4 +14,4 @@ Informações técnicas:
   - Biblioteca Crypto (Javascript)
   - Bibliotecas Python Dome e Starkbank (Python)
 
-[Material Complementar](MateriaisComplementares\Criptografia1.md)
+[Material Complementar](https://github.com/BlockchainInsper/Entregaveis/blob/novo-entregaveis/MateriaisComplementares/Criptografia1.md)
