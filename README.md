@@ -14,13 +14,13 @@ Informações técnicas:
   - Biblioteca Crypto (Javascript)
   - Bibliotecas Python Dome e Starkbank (Python)
 
-[Material Complementar](https://github.com/BlockchainInsper/Entregaveis/blob/novo-entregaveis/MateriaisComplementares/Criptografia1.md)
+[Material Complementar](https://github.com/BlockchainInsper/Entregaveis/blob/master/MateriaisComplementares/Criptografia1.md)
 
 ## Criptografia II
 
 O segundo entregável trará com mais clareza e aprofundamento matemático como funciona a criptografia a partir de chaves públicas e privadas.
 
-[Entregável RSA](https://github.com/BlockchainInsper/Entregaveis/blob/novo-entregaveis/MateriaisComplementares/Criptografia2.md)
+[Entregável RSA](https://github.com/BlockchainInsper/Entregaveis/blob/master/MateriaisComplementares/Criptografia2.md)
 
 Informações técnicas:
 
