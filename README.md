@@ -18,7 +18,7 @@ Informações técnicas:
 
 ## Criptografia II
 
-O segundo entregável trará com mais clareza e aprofundamento matemático como funciona a criptografia a partir de chaves públicas e privadas.
+O segundo entregável trará, com mais clareza e aprofundamento matemático, o funcionamento da criptografia a partir de chaves públicas e privadas.
 
 [Entregável RSA](https://github.com/BlockchainInsper/Entregaveis/blob/master/MateriaisComplementares/Criptografia2.md)
 
@@ -29,7 +29,7 @@ Informações técnicas:
 - Dicas:
   - Biblioteca Crypto (Javascript)
   - Bibliotecas Python Dome e Starkbank (Python)
-- **Todos os exercícios estão acompanhados de respostas, portanto sua tarega é criar um programa que chegue a esses resultados da maneira que achar mais conveniente**
+- **Todos os exercícios estão acompanhados de respostas, portanto sua tarefa é criar um programa que chegue a esses resultados da maneira que achar mais conveniente**
 
 ## Como fazer as entregas?
 
