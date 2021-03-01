@@ -106,17 +106,17 @@ Quando você envia sua mensagem dizendo “sim”, seu amante ciumento intercept
 
 Podemos nos proteger contra esses ataques assinando a mensagem.
 
-Imagine que você escreve uma mensagem M. Você criptografa esta mensagem com a chave pública de seu amigo: <code>C = M<sup>e<sub>0</sub></sup> mod N<sub>0</sub></code>.
+Imagine que você escreve uma mensagem M. Você criptografa esta mensagem com a **chave pública de seu amigo**: <code>C = M<sup>e<sub>0</sub></sup> mod N<sub>0</sub></code>.
 
-Para assinar esta mensagem, você calcula o hash da mensagem: H (M) e "criptografa" isso com sua chave privada: <code>S = H(M)<sup>d<sub>1</sub></sup> mod N<sub>1</sub></code>.
+Para assinar esta mensagem, você faz o hash da mensagem: H (M) e "criptografa" isso com **a sua chave privada**: <code>S = H(M)<sup>d<sub>1</sub></sup> mod N<sub>1</sub></code>.
 
 [**Em sistemas de criptografia reais, a melhor prática é usar chaves separadas para criptografar e assinar mensagens**](https://crypto.stackexchange.com/questions/12090/using-the-same-rsa-keypair-to-sign-and-encrypt/12138#12138)
 
-Seu amigo pode descriptografar a mensagem usando sua chave privada: <code>m = C<sup>d<sub>0</sub></sup> mod N<sub>0</sub></code>. Usando sua chave pública, eles calculam <code>s = S<sup>e<sub>1</sub></sup> mod N<sub>1</sub></code>.
+Seu amigo pode descriptografar a mensagem usando **a chave privada dele**: <code>m = C<sup>d<sub>0</sub></sup> mod N<sub>0</sub></code>. E usando **a sua chave pública**, ele calcula <code>s = S<sup>e<sub>1</sub></sup> mod N<sub>1</sub></code>.
 
-Agora, calculando H (m) e comparando-o com "s": H (m) == s, eles podem garantir que a mensagem que você enviou é a mensagem que eles receberam!
+Agora, fazendo o hash da mensagem H (m) e comparando-o com "s": H (m) == s, ele pode garantir que a mensagem que você enviou é a mensagem que ele recebeu!
 
-Assine a flag <code>crypto{Immut4ble_m3ssag1ng}</code> usando sua chave privada e a função hash SHA256.
+**Assine a flag <code>crypto{Immut4ble_m3ssag1ng}</code> usando sua chave privada e a função hash SHA256.**
 
 [private.key](https://cryptohack.org/static/challenges/private_0a1880d1fffce9403686130a1f932b10.key)
 
