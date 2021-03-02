@@ -6,6 +6,7 @@
 :--
 [An Introduction to Modular Math](https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/e/modulo-operator)
 [Introdução à criptografia usando aritmética modular](https://click.linksynergy.com/deeplink?id=PtFMiHYfEVk&mid=40328&murl=https%3A%2F%2Fwww.coursera.org%2Flearn%2Fwhat-is-a-proof)
+[A Computational Introduction to Number Theory and Algebra](https://www.shoup.net/ntb/ntb-v2.pdf)
 
 Criptografia assimétrica |
 :--
