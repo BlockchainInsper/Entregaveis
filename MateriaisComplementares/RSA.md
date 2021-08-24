@@ -2,25 +2,25 @@
 
 ## Apresentação
 
-O RSA, que foi apresentado pela primeira vez em 1977, é o sistema de criptografia de public-key mais famoso. Ele possui dois principais casos de usos:
+O RSA, apresentado pela primeira vez em 1977, é o sistema de criptografia de public-key mais famoso. Ele possui os dois principais casos de usos:
 
 - A [criptografia de chave pública](https://en.wikipedia.org/wiki/Public-key_cryptography) permite que um usuário, Alice, distribua uma chave pública e outros possam usar essa chave pública para criptografar mensagens para ela. Alice pode então usar sua chave privada para descriptografar as mensagens.
 
 - As [assinaturas digitais](https://en.wikipedia.org/wiki/Digital_signature) permitem que Alice use sua chave privada para "assinar" uma mensagem. Qualquer pessoa pode usar a chave pública de Alice para verificar se a assinatura foi criada com sua chave privada correspondente e se a mensagem não foi adulterada.
 
-Embora a segurança do RSA seja baseada na dificuldade de fatorar grandes números compostos, nos últimos anos o criptossistema tem recebido críticas por ser fácil de implementar **incorretamente**. As principais falhas foram encontradas em implantações comuns, a mais notória delas sendo a [vulnerabilidade ROCA](https://en.wikipedia.org/wiki/ROCA_vulnerability), que levou a Estônia a suspender 760.000 carteiras de identidade nacionais.
+Embora a segurança do RSA seja baseada na dificuldade de fatorar grandes números compostos, nos últimos anos o este método tem recebido críticas por ser fácil de implementar **incorretamente**. As principais falhas foram encontradas em implementações comuns, a mais notória delas sendo a [vulnerabilidade ROCA](https://en.wikipedia.org/wiki/ROCA_vulnerability), que levou a Estônia a suspender 760.000 carteiras de identidade nacionais.
 
-Os exercícios abaixo apresentam a você os muitos dos detalhes por trás do RSA.
+Os exercícios abaixo apresentam a você alguns dos detalhes por trás do RSA.
 
 ## Subtask 1
 
-Todas as operações no RSA envolvem **exponenciação modular** ([álgebra modular](https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic)).
+Todas as operações no RSA envolvem [exponenciação modular](https://pt.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/modular-exponentiation).
 
-A exponenciação modular é uma operação amplamente usada em criptografia e normalmente é escrita como: 210 mod 17
+A exponenciação modular é uma operação amplamente usada em criptografia e normalmente é escrita como: 2^10 mod 17
 
 Você pode pensar nisso como elevar algum número a uma certa potência (2^10 = 1024) e, em seguida, obter o restante da divisão por algum outro número (1024 mod 17 = 4). Em Python, há um operador integrado para realizar esta operação: pow (base, expoente, módulo)
 
-No RSA, a exponenciação modular, juntamente com o problema de fatoração de primos, nos ajuda a construir uma [**"trapdoor function"**](https://en.wikipedia.org/wiki/Trapdoor_function). Esta é uma função fácil de calcular em uma direção, mas difícil de fazer ao contrário, a menos que você tenha as informações corretas. Ele nos permite criptografar uma mensagem e apenas a pessoa com a chave pode realizar a operação inversa para descriptografá-la.
+No RSA, a exponenciação modular, juntamente com o problema de fatoração de primos, nos ajuda a construir uma ["trapdoor function"](https://en.wikipedia.org/wiki/Trapdoor_function). Esta é uma função fácil de calcular em uma direção, mas difícil de revertê-la, a menos que você tenha as informações corretas. Ela nos permite criptografar uma mensagem e apenas a pessoa com a chave pode realizar a operação inversa para descriptografá-la.
 
 **Encontre a solução para 10117 mod 22663 (em código)**
 
@@ -28,9 +28,17 @@ No RSA, a exponenciação modular, juntamente com o problema de fatoração de p
 
 ## Subtask 2
 
-A criptografia RSA é a exponenciação modular de uma mensagem com um expoente “e” e um módulo “N” que normalmente é um produto de dois primos: N = p \* q.
+A criptografia RSA é a exponenciação modular de uma mensagem com um expoente “e” e um módulo “N” que normalmente é um produto de dois primos: N = p * q.
 
-Juntos, o expoente e o módulo formam uma "chave pública" RSA (N, e). O valor mais comum para o expoente “e” é 0x10001 (base 16 ou hexadecimal) ou 65537 (base 10).
+```
+Cifra = m^e mod N
+
+m = Mensagem (Sequência de bits, hash da mensagem, etc)
+e = expoente
+N = multiplicação de dois primos p e q
+```
+
+Juntos, o expoente e o módulo formam uma "chave pública" RSA (N, e). O valor mais comum para o expoente “e” é 0x10001 (hexadecimal) ou 65537 (base 10).
 
 **"Criptografe" o número 12 usando o expoente e = 65537 e os primos p = 17 eq = 23. Qual número você obtém como texto cifrado?**
 
@@ -40,7 +48,7 @@ Juntos, o expoente e o módulo formam uma "chave pública" RSA (N, e). O valor m
 
 O RSA depende da dificuldade de fatoração do módulo N. Se os primos podem ser encontrados, então podemos calcular o [totiente de Euler de N](https://leimao.github.io/article/RSA-Algorithm/) e, assim, descriptografar o texto cifrado.
 
-Dado que N = p \* q (dois primos):
+Dado que N = p * q (dois primos):
 
 ```
 p = 857504083339712752489993810777
@@ -56,9 +64,15 @@ q = 1029224947942998075080348647219
 
 A chave privada “d” é usada para descriptografar textos cifrados criados com a chave pública correspondente (também pode ser usada para "assinar" uma mensagem, como foi dito anteriormente).
 
-A chave privada é a informação secreta ou "trapdoor" que nos permite inverter rapidamente a função de criptografia. Se o RSA estiver bem implementado, se você não tiver a chave privada, a maneira mais rápida de descriptografar o texto cifrado é primeiro tentar fatorar o módulo.
+A chave privada é a informação secreta ou "trapdoor". Se o RSA estiver bem implementado, e você não possuir a chave privada, a maneira mais rápida de descriptografar o texto cifrado é primeiro tentar fatorar o totiente.
 
 Em RSA, a chave privada é o [inverso multiplicativo modular](https://en.wikipedia.org/wiki/Modular_multiplicative_inverse) do expoente e como módulo o totiente de N.
+
+```
+Private Key = e^-1 mod phi
+
+phi = Totiente de N = (p-1)*(q-1)
+```
 
 Dados os dois primos:
 
@@ -88,7 +102,7 @@ N = 882564595536224140639625987659416029426239230804614613279163
 e = 65537
 ```
 
-**Use a chave privada que você encontrou para esses parâmetros na subtask anterior para descriptografar este texto cifrado:**
+**Use a chave privada que você encontrou na subtask anterior para descriptografar este texto cifrado:**
 
 ```
 c = 77578995801157823671636298847186723593814843845525223303932
