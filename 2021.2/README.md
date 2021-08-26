@@ -4,7 +4,7 @@ Propostas de Entregáveis usadas na turma de 2021.2
 
 ## Criptografia
 
-O primeiro entregável será o uso de criptografia para o envio de mensagens em uma rede lightning simulada. Os arquivos necessários para o entregável estão disponíveis [aqui](https://drive.google.com/file/d/1z-fTq43rzMVrejN4rNZ4MX9m_vpIS8tX/view?usp=sharing).
+O primeiro entregável será o uso de criptografia para o envio de mensagens em uma rede lightning simulada. Os arquivos necessários para o entregável estão disponíveis [aqui](https://drive.google.com/file/d/1wesL4O9HK7S0Z6MdqazG8k2TbYDNuyO1/view?usp=sharing).
 
 Sua entrega deve ser feita seguindo o modelo no final do README. E o único arquivo que deve ser enviado é o ```node.py```. 
 
