@@ -79,7 +79,7 @@ Informações técnicas:
 - Dicas:
   - Biblioteca Crypto e Axios (Javascript)
   - Bibliotecas Python Dome, Starkbank e requests (Python)
-  - O modelo desta simulação segue todos os padrões de uma rede Bitcoin, portanto o Hash deve ser criado a partir de 2 SHA-256 seguidos
+  - O modelo desta simulação segue todos os padrões de uma rede Bitcoin, portanto o Hash deve ser criado a partir de 2 SHA-256 seguidos da string mencionada acima
   - Veja [este link](https://www.oreilly.com/library/view/mastering-bitcoin/9781491902639/ch07.html) para entender melhor o desafio
   - **Caso esteja com dificuldades** para criar a Merkle Root a partir das transações, veja [este código](https://gist.github.com/Kcpf/ec3a687c23c032b5a0c6df86dc9f12ab)
 - **Requests**
