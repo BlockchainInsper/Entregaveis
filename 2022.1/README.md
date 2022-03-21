@@ -9,7 +9,7 @@
 3. Faça o entregável e salve-o com a seguinte estrutura de pastas
 
 ```.
-├── 2021.2
+├── 2022.1
 |   ├── Seu Nome
 │   |   ├── Nome do Entregável
 │   │   |   ├── Arquivos
