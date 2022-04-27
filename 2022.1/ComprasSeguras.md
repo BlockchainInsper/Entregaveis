@@ -18,7 +18,6 @@ Informações técnicas:
 
 **Opcional:**
 - [Dicionário Solidity](https://solidity-by-example.org/)
-- [MaterialComplementar](https://github.com/BlockchainInsper/Entregaveis/blob/proposta-compra-venda/MateriaisComplementares/Solidity.md)
 
 ### Modelo
 
