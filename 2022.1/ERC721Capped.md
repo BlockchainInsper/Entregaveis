@@ -14,3 +14,5 @@ ERC721 é o padrão de código seguido pelos desenvolvedores para criar NFTs. Em
 | setMintPrice() | Troca o preço do token a ser criado |
 | openSales() | Possibilita a venda de tokens (mint), chama setMintPrice() com o novo preço|
 | closeSales() | Impossibilita a venda de tokens (mint) |
+
+## Apenas entreguem o arquivo ERC721Capped.sol nesse repositório!!!!!!
