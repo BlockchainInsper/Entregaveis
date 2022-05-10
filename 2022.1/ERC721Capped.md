@@ -1,5 +1,7 @@
 ## ERC 721 Capped
 
+repo com código base: https://github.com/BlockchainInsper/ERC721Capped/tree/main
+
 ERC721 é o padrão de código seguido pelos desenvolvedores para criar NFTs. Em diversas coleções é dito que um número máximo de tokens será emitido, contudo, nada disso é colocado em contrato. Seu objetivo é desenvolver uma solução para tal problema.
 
 |Functions   |      Explicação      |
