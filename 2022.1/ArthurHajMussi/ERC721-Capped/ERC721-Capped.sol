@@ -9,11 +9,12 @@ contract ERC721Capped is ERC721, Ownable {
 
 uint _maxSupply;
 uint _mintPrice;
-bool _mintOpen = false; 
+bool _mintOpen; 
 uint _currentSupply;
 
  constructor(string memory name, string memory symbol, uint64 cap) ERC721(name, symbol) {
      _maxSupply = cap;
+     _mintOpen = false;
     }
 
 function getTotalSupply() public view returns(uint) {
@@ -27,6 +28,7 @@ function getBalance() public view returns(uint) {
 function _createNFT() internal {
     require(_currentSupply < _maxSupply);
     _currentSupply++;
+    _safeMint(msg.sender, _currentSupply);
 }
 
 function ownerMint() external onlyOwner {
