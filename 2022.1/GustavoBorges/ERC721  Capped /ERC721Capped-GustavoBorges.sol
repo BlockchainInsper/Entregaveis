@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract entregavel is ERC721, Ownable {
-    uint256 public mintPrice = 0.07208214 ether;
+    uint256 public mintPrice = 0 ether;
     uint256 public totalSupply;
     uint256 public maxSupply;
     bool public canMint;
@@ -47,7 +47,7 @@ contract entregavel is ERC721, Ownable {
         _createNFT();
     }
 
-    function setMintPrice(uint256 _mintPrice) internal onlyOwner {
+    function setMintPrice(uint256 _mintPrice) public onlyOwner {
         mintPrice = _mintPrice;
     }
 
