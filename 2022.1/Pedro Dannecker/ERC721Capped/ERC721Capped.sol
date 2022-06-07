@@ -28,10 +28,10 @@ contract ERC721Capped is ERC721 {
 
     function withdraw() public onlyOwner {
             owner.transfer(address(this).balance);
-            //Transfer(address(this),owner, address(this).balance);
+        
             
         }
-    function setMintPrice(uint valor_) external onlyOwner{
+    function setMintPrice(uint valor_) public onlyOwner{
         mintprice=valor_;
     } 
     function _createNFT()  internal{
@@ -54,7 +54,7 @@ contract ERC721Capped is ERC721 {
     }
     function openSales(uint price) public onlyOwner{
         sales =true;
-        setMintprice(price);
+        setMintPrice(price);
 
     }
     function closeSales() public onlyOwner{
