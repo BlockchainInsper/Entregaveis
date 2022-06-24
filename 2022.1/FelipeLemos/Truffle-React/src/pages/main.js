@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Head from './Header';
 import './main.css';
-import Capped from '../abis/ERC721Capped.json'
 import { utils } from 'web3';
 import {
     loadWeb3,
@@ -36,15 +35,19 @@ const LandingPage = () => {
     }
 
     const callSetMintPrice = async (_mintPrice) => {
+      _mintPrice = utils.toWei(_mintPrice);
       await capped.methods.setMintPrice(_mintPrice).send({from: account});
     }
 
     const callOpenSales = async (_mintPrice) => {
+      _mintPrice = utils.toWei(_mintPrice);
       await capped.methods.openSales(_mintPrice).send({from: account});
     }
+
     const callCloseSales = async () => {
       await capped.methods.closeSales().send({from: account});
     }
+
     const callWithdraw = async () => {
       await capped.methods.withdraw().send({from: account});
     }
@@ -131,7 +134,7 @@ const LandingPage = () => {
                   <div>
                     <p className='title'>WITHDRAW</p> 
                   </div>
-                  <button className='btnGet' type='button' onClick={callWithdraw}>WD</button>
+                  <button className='btn' type='button' onClick={callWithdraw}>WD</button>
                 </div>
 
                 
