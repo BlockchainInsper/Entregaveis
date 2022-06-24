@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Head from './Header';
 import './main.css';
+import {utils} from 'web3';
 
 import {
     loadWeb3,
@@ -10,7 +11,7 @@ import {
 
 const LandingPage = () => {
     const [account, setAccount] = useState("")
-    const [ercContract, setERC721Contract] = useState("")
+    const [erc721Contract, setERC721Contract] = useState("")
     const [supply, setSupply] = useState("")
     const [balance, setBalance] = useState("")
     const [ownerMint] = useState("")
@@ -22,7 +23,7 @@ const LandingPage = () => {
     const [price, setPrice] = useState("")
 
     const callGetBalance = async () => {
-      const bal = await ercContract.methods.getBalance().call();
+      const bal = await erc721Contract.methods.getBalance().call();
       setBalance(utils.fromWei(bal));
     }
 

@@ -1,4 +1,4 @@
-import Tutorial from '../abis/Tutorial.json';
+import ERC721Capped from '../abis/ERC721Capped.json';
 
 var Web3 = require('web3');
 
