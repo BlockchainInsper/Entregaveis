@@ -28,6 +28,7 @@ contract ERC721Capped is ERC721 {
 
     function withdraw() public onlyOwner {
             owner.transfer(address(this).balance);
+            //Transfer(address(this),owner, address(this).balance);
             
         }
     function setMintPrice(uint valor_) public onlyOwner{
