@@ -6,6 +6,6 @@ rede="https://rinkeby.infura.io/v3/5d099bf9f1a14ae39b7d2fd3c6313ee2"
 
 connection=Web3(HTTPProvider(rede))
 
-storage=connection.eth.get_storage_at(end,1).hex()
+storage=connection.eth.getStorageAt(end, 0)
 
 print(storage)
