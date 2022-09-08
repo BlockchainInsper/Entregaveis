@@ -11,3 +11,7 @@ w3 = Web3(Web3.HTTPProvider(network))
 storage = w3.eth.get_storage_at(address, 1).hex()
 
 print(storage)
+
+locked = w3.eth.get_storage_at(address, 0).hex()
+
+print(locked)
