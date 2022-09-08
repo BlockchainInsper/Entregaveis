@@ -1,6 +1,6 @@
 import requests
 import time
-import merkle as mk 
+import merkle as mk
 
 block_information = requests.get('https://blockchainsper.herokuapp.com/info')
 data = block_information.json()

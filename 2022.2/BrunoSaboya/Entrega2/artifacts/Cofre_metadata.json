@@ -1,0 +1,83 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_password",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "locked",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_password",
+						"type": "bytes32"
+					}
+				],
+				"name": "unlock",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Cofre.sol": "Cofre"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Cofre.sol": {
+			"keccak256": "0x7a89ad79716fdf18dfb279d97292aeb2ebebc80197dcdd60a3628f19afc7a841",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://414587c530e879937cb9837f35ccf71bb67e08cb29e3eb6c25ecd3eb788adfc4",
+				"dweb:/ipfs/QmYCCQErWqBFGjhEA42A47NTNTVEPbM5AbkG9Gkhyz5S4E"
+			]
+		}
+	},
+	"version": 1
+}
