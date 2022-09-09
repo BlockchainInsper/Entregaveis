@@ -8,3 +8,5 @@ address = '0x6FEDfcc7D324ed5df30836A09158Ee66cCD11774'
 storage = w3.eth.get_storage_at(address, 1).hex()
 
 print(storage)
+
+# Entrega Cofre 2.0
