@@ -9,3 +9,4 @@ w3 = Web3(Web3.HTTPProvider(network))
 balance = w3.fromWei(w3.eth.getBalance(address), 'ether')
 
 print(f'Balance : {balance} ETH')
+
